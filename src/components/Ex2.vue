@@ -47,7 +47,7 @@ function reset() {
 
         <div style="margin-top: 14px;">
             <!-- C. Display winner / status here -->
-             points left to win: {{ maxScore - Math.max(scoreA, scoreB) }}
+             points left to win : {{ maxScore - Math.max(scoreA, scoreB) }}
         </div>
 
 
