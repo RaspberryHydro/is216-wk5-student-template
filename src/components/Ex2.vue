@@ -41,13 +41,19 @@ function reset() {
         <div style="display: flex; gap: 12px; margin: 12px 0;">
             <button v-on:click="scoreA += 1">+ Team A</button>
             <button v-on:click="scoreB += 1">+ Team B</button>
-            <button :click="reset()">Reset</button>
+            <button @click="reset()">Reset</button>
         </div>
 
 
         <div style="margin-top: 14px;">
             <!-- C. Display winner / status here -->
+             <p v-if="scoreA < 10 && scoreB < 10">
              points left to win : {{ maxScore - Math.max(scoreA, scoreB) }}
+             </p>
+             <p v-else-if="scoreA == 10">
+                {{ teamA }} won!
+             </p>
+             <p v-else>{{ teamB }} won!</p>
         </div>
 
 

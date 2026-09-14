@@ -8,8 +8,18 @@ const selectedOp = ref("+")
 
 // TODO: Add Code Here
 // Note: DO NOT USE "eval()". In security, "eval" is considered "evil"!!!
-
-    
+const operator = {
+    '+':(a,b) => {return a+b;},
+    '*':(a,b) => {return a*b;},
+    '-':(a,b) => {return a-b;},
+    '/':(a,b) => {return a/b;},
+    '%':(a,b) => {return a%b;}
+}
+    const result = computed(() => {
+       
+       
+        return operator[selectedOp.value](x.value,y.value);
+    });
 </script>
 
 <template>
