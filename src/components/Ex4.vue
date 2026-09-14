@@ -24,5 +24,5 @@ function addItem(l)
     <li>{{ i }}<button @click="delitem(key)" style="display:inline;">delete!</button></li>
     </template>
 </ul>
-   <input type="text" id="in" v-model="newitem"><button @click="addItem(newitem)" @keypress.enter="addItem(newitem)">add</button>
+   <input type="text" id="in" v-model="newitem" @keyup.enter="addItem(newitem)"><button @click="addItem(newitem)" >add</button>
 </template>
