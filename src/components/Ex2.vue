@@ -10,6 +10,7 @@ const maxScore = ref(10)
 
 function addA() {
     scoreA.value = Math.min(maxScore.value, scoreA.value + step.value);
+    
 }
 
 function addB() {
@@ -33,17 +34,20 @@ function reset() {
         <p>Current: {{ scoreA }} - {{ scoreB }}</p>
 
         <!-- B. In-template expressions go here -->
-
+        
+            total score: {{ scoreA + scoreB }}
+        
         <!-- A. Event handlers go here -->
         <div style="display: flex; gap: 12px; margin: 12px 0;">
-            <button>+ Team A</button>
-            <button>+ Team B</button>
-            <button>Reset</button>
+            <button v-on:click="scoreA += 1">+ Team A</button>
+            <button v-on:click="scoreB += 1">+ Team B</button>
+            <button :click="reset()">Reset</button>
         </div>
 
 
         <div style="margin-top: 14px;">
             <!-- C. Display winner / status here -->
+             points left to win: {{ maxScore - Math.max(scoreA, scoreB) }}
         </div>
 
 
