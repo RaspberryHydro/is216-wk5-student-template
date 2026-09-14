@@ -51,9 +51,9 @@ function reset() {
              points left to win : {{ maxScore - Math.max(scoreA, scoreB) }}
              </p>
              <p v-else-if="scoreA == 10">
-                {{ teamA }} won!
+                Winner: {{ teamA.toUpperCase() }}
              </p>
-             <p v-else>{{ teamB }} won!</p>
+             <p v-else>Winner: {{ teamB.toUpperCase() }}</p>
         </div>
 
 
